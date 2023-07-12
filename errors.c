@@ -41,7 +41,7 @@ int err_putchar(char c)
 }
 
 /**
- * fd_putc - writes the character to given file 
+ * fd_putc - writes the character to given file
  * @c: The printed character
  * @f_d: The filedescriptor to write to
  * Return: If successful (1), if there is an error (-1) is returned,

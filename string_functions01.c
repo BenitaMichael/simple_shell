@@ -56,10 +56,7 @@ int my_str_comp(const char *s1, const char *s2)
 		return (0);
 	else if (*s1 < *s2)
 	{
-		return(-1);
-	}else
-	{
-		return (1);
+		return (-1);
 	}
 }
 
@@ -78,7 +75,3 @@ char *_check(const char *haystack, const char *needle)
 			return (NULL);
 	return ((char *)haystack);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> aa58e6584718228daace16e1d37b4280e1904f00

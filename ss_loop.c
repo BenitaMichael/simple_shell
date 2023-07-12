@@ -96,7 +96,7 @@ void path_cmd(cmd_d *cmd_dat)
 	if (!j)
 		return;
 
-	_path = find_full_path (cmd_dat, _get_env(cmd_dat, "PATH="), cmd_dat->argv[0]);
+	_path = find_full_path(cmd_dat, _get_env(cmd_dat, "PATH="), cmd_dat->argv[0]);
 	if (_path)
 	{
 		cmd_dat->path = _path;

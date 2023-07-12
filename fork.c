@@ -37,8 +37,4 @@ void fork_c(cmd_d *cmd_dat)
 				print_err(cmd_dat, "Permission denied\n");
 		}
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> aa58e6584718228daace16e1d37b4280e1904f00

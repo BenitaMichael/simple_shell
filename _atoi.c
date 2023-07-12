@@ -1,4 +1,3 @@
-#include "main.h"
 
 /**
  * _atoi - converts the initial portion of the string pointed to a integer
@@ -63,8 +62,4 @@ int is_delimeter(char c, char *d)
 		if (*d++ == c)
 			return (1);
 	return (0);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> aa58e6584718228daace16e1d37b4280e1904f00

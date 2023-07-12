@@ -3,7 +3,7 @@
 /**
  * memory_set - fills the memory set with byte
  * @p : pointer to memory
- * @b : bytes 
+ * @b : bytes
  * @s : number of byes to be filled
  * Return: (p) the pointer to memory
  */
@@ -57,7 +57,7 @@ void *my_realloc(void *ptr, unsigned int old, unsigned int new)
 
 	if (old < new)
 	{
-    	old = old;
+		old = old;
 	}
 	else
 	{

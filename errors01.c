@@ -95,7 +95,7 @@ void rm_comments(char *buff)
 {
 	int a;
 
-	for (a= 0; buff[a] != '\0'; a++)
+	for (a = 0; buff[a] != '\0'; a++)
 		if (buff[a] == '#' && (!a || buff[a - 1] == ' '))
 		{
 			buff[a] = '\0';
@@ -139,7 +139,3 @@ char *convert_num(long int no, int base, int _flags)
 		*--ptr = sign;
 	return (ptr);
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> aa58e6584718228daace16e1d37b4280e1904f00

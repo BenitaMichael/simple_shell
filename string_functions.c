@@ -11,7 +11,7 @@ int _putchar(char c)
 {
 
 	return (write(1, &c, 1));
-	/*static int i;
+	static int i;
 	static char buff[WRITE_BUF_SIZE];
 
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
@@ -21,7 +21,7 @@ int _putchar(char c)
 	}
 	if (c != BUF_FLUSH)
 		buff[i++] = c;
-	return (1);*/
+	return (1);
 }
 
 
@@ -67,7 +67,7 @@ char *my_str_copy(char *str, char *src)
 
 /**
  * str_duplicate - duplicates a string input or output
- * @str: the string input 
+ * @str: the string input
  * Return: address to the string duplicated
  */
 char *str_duplicate(const char *str)
@@ -86,8 +86,3 @@ char *str_duplicate(const char *str)
 		dup[len] = *--str;
 	return (dup);
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> aa58e6584718228daace16e1d37b4280e1904f00
