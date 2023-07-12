@@ -54,6 +54,6 @@ Simple shell project using C programming language
 <hr/>
 
 ## Authors
-<b><a href= "https://github.com/kabasilim">Abasilim Kosisochukwu Obaejeogu></a></b>
+<b><a href= "https://github.com/kabasilim">Abasilim Kosisochukwu Obaejeogu> </a> </b> 
 <br/>
-<b><a href= "https://github.com/BenitaMichael">Benita Koliseyenum Enubiaka></a></b>
+<b><a href= "https://github.com/BenitaMichael">Benita Koliseyenum Enubiaka> </a> </b>
