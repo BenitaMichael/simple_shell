@@ -295,4 +295,8 @@ int var_replace(cmd_d *cmd_dat);
 int replace_str(char **o, char *n);
 
 
+<<<<<<< HEAD
 #endif
+=======
+#endif
+>>>>>>> aa58e6584718228daace16e1d37b4280e1904f00

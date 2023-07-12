@@ -72,4 +72,8 @@ char *string_concat(char *dest, char *src, int n)
 	if (b < n)
 		dest[a] = '\0';
 	return (d);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aa58e6584718228daace16e1d37b4280e1904f00

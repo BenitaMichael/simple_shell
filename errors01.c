@@ -139,3 +139,7 @@ char *convert_num(long int no, int base, int _flags)
 		*--ptr = sign;
 	return (ptr);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa58e6584718228daace16e1d37b4280e1904f00

@@ -63,4 +63,8 @@ int is_delimeter(char c, char *d)
 		if (*d++ == c)
 			return (1);
 	return (0);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aa58e6584718228daace16e1d37b4280e1904f00

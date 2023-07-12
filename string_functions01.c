@@ -78,3 +78,7 @@ char *_check(const char *haystack, const char *needle)
 			return (NULL);
 	return ((char *)haystack);
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa58e6584718228daace16e1d37b4280e1904f00

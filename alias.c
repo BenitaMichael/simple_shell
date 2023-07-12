@@ -99,4 +99,8 @@ int alias_cmd(cmd_d *cmd_dat)
 	}
 
 	return (0);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> aa58e6584718228daace16e1d37b4280e1904f00
