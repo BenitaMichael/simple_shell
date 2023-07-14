@@ -13,7 +13,8 @@ char *history_file(cmd_d *cmd_dat)
 	_dir = _get_env(cmd_dat, "HOME=");
 	if (!_dir)
 		return (NULL);
-	buf = malloc((string_length(_dir) + string_length(HIST_FILE) + 2) * sizeof(char));
+	buf = malloc((string_length(_dir) + string_length(HIST_FILE) + 2) *
+			sizeof(char));
 	if (!buf)
 		return (NULL);
 	buf[0] = 0;

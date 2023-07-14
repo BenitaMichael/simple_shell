@@ -95,7 +95,7 @@ void rm_comments(char *buff)
 {
 	int a;
 
-	for (a= 0; buff[a] != '\0'; a++)
+	for (a = 0; buff[a] != '\0'; a++)
 		if (buff[a] == '#' && (!a || buff[a - 1] == ' '))
 		{
 			buff[a] = '\0';
