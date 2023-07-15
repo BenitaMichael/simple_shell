@@ -9,10 +9,9 @@
 
 int _putchar(char c)
 {
-
-	return (write(1, &c, 1));
-	/*static int i;
+	static int i;
 	static char buff[WRITE_BUF_SIZE];
+	return (write(1, &c, 1));
 
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
@@ -21,7 +20,7 @@ int _putchar(char c)
 	}
 	if (c != BUF_FLUSH)
 		buff[i++] = c;
-	return (1);*/
+	return (1);
 }
 
 
@@ -67,7 +66,7 @@ char *my_str_copy(char *str, char *src)
 
 /**
  * str_duplicate - duplicates a string input or output
- * @str: the string input 
+ * @str: the string input
  * Return: address to the string duplicated
  */
 char *str_duplicate(const char *str)

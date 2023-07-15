@@ -114,7 +114,7 @@ ssize_t _input(cmd_d *cmd_dat)
 		j = i; /* init new iterator to current buf position */
 		p = buf + i; /* get pointer for return */
 
-		chain_check(cmd_dat, buf, & j, i, l);
+		chain_check(cmd_dat, buf, &j, i, l);
 		while (j < l) /* iterate to semicolon or end */
 		{
 			if (is_Chain(cmd_dat, buf, &j))

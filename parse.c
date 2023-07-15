@@ -51,7 +51,7 @@ char *char_dup(char *path_str, int start_c, int stop_c)
  *
  * Return: full path of command if found or (NULL) if not
  */
-char *find_full_path (cmd_d *dat, char *path_str, char *cmd)
+char *find_full_path(cmd_d *dat, char *path_str, char *cmd)
 {
 	int a = 0, current_p = 0;
 	char *_path;
