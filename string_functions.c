@@ -11,6 +11,7 @@ int _putchar(char c)
 {
 	static int i;
 	static char buff[WRITE_BUF_SIZE];
+
 	return (write(1, &c, 1));
 
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
@@ -25,7 +26,7 @@ int _putchar(char c)
 
 
 /**
- * appendS - prints a string
+ * append_S - prints a string
  * @str: pointer to string
  */
 
@@ -44,7 +45,7 @@ void append_S(char *str)
 }
 
 /**
- * str_copy - copies a string
+ * *my_str_copy - copies a string
  * @str: first string input
  * @src: second string input
  * Return: returns the result of the comparison

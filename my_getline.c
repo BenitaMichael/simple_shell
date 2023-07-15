@@ -158,7 +158,8 @@ ssize_t read_buf(cmd_d *cmd_dat, char *buf, size_t *s)
 
 
 /**
- * signaltHandler - blocks ctrl-C from exiting
+ * signalHandler - blocks ctrl-C from exiting and display
+ * a new prompt
  * @sig_num: signal number
  * Return: returns nothing (void)
  */

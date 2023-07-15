@@ -45,7 +45,8 @@ int hsh_shell(cmd_d *cmd_dat, char **av)
 /**
  * find_builtIn - checks for built in command
  * @cmd_dat: parameter
- * Return: (-1) if builtin command not found, (0) if builtin command is executed successfully
+ * Return: returns (-1) if builtin command not found, (0) if builtin
+ * command is executed successfully
  * and (1) if found but not executed successfully
  */
 int find_builtIn(cmd_d *cmd_dat)

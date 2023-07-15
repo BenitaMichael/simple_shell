@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * **str_to_words - splits a string into words and repeated
+ * **token - splits a string into words and repeated
  * delimeter are ignored
  * @str: string input
  * @delim: delimeter
@@ -19,7 +19,8 @@ char **token(char *str, char *delim)
 	if (!delim)
 		delim = " ";
 	for (a = 0; str[a] != '\0'; a++)
-		if (!is_delimeter(str[a], delim) && (is_delimeter(str[a + 1], delim) || !str[a + 1]))
+		if (!is_delimeter(str[a], delim) && (is_delimeter(str[a + 1], delim)
+					|| !str[a + 1]))
 			word_num++;
 
 	if (word_num == 0)
