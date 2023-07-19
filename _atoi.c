@@ -2,13 +2,14 @@
 /**
  * _atoi - converts the initial portion of the string pointed to a integer
  * @str: the string to be converted
- * Return: 0 if no numbers in string, converted number otherwise
+ * Return: returns (0) if numbers in string or a set of 
+ * converted number
  */
 
 int _atoi(char *str)
 {
-	int a;
-	int sign = 1, flag = 0, product;
+	int a, product;
+	int sign = 1, flag = 0;
 	unsigned int res = 0;
 
 	for (a = 0; str[a] != '\0' && flag != 2; a++)

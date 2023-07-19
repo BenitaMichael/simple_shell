@@ -31,10 +31,11 @@ char *history_file(cmd_d *cmd_dat)
  * @cmd_dat: structure type
  * Return: returns history_count if successful and (0) if not
  */
+
 int rd_history(cmd_d *cmd_dat)
 {
-	int a, last = 0, line_count = 0;
-	ssize_t f_desc, rdlen, f_size = 0;
+	int a, l = 0, line_count = 0;
+	ssize_t f_desc, read_len, f_size = 0;
 	struct stat st;
 	char *buf = NULL, *file_name = history_file(cmd_dat);
 
@@ -52,20 +53,20 @@ int rd_history(cmd_d *cmd_dat)
 	buf = malloc(sizeof(char) * (f_size + 1));
 	if (!buf)
 		return (0);
-	rdlen = read(f_desc, buf, f_size);
+	read_len = read(f_desc, buf, f_size);
 	buf[f_size] = 0;
-	if (rdlen <= 0)
+	if (read_len <= 0)
 		return (free(buf), 0);
 	close(f_desc);
 	for (a = 0; a < f_size; a++)
 		if (buf[a] == '\n')
 		{
 			buf[a] = 0;
-			build_history(cmd_dat, buf + last, line_count++);
-			last = a + 1;
+			build_history(cmd_dat, buf + l, line_count++);
+			l = a + 1;
 		}
-	if (last != a)
-		build_history(cmd_dat, buf + last, line_count++);
+	if (l != a)
+		build_history(cmd_dat, buf + l, line_count++);
 	free(buf);
 	cmd_dat->history_count = line_count;
 	while (cmd_dat->history_count-- >= HIST_MAX)
