@@ -16,38 +16,6 @@
 #include <fcntl.h>
 #include <errno.h>
 
-/**
-*typedef void(*sighandler_t)(int)
-*sighandler_t signal(int signum, sighandler_t handler);
-*
-*int close(int fd);
-*int access(const char *pathname, int mode);
-*int chdir(const char *path);
-*int clisedir(DIR *dirp);
-*int execve(cont char *pathname, char *const argv[], char *const envp[]);
-*void exit(int status);
-*void _exit(int status);
-*int fflush(FILE *stream);
-*pid_t fork(void);
-*void free(void *ptr);
-*char *getcwd(char *buf, size_t size);
-*ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-*pid_t getpid(void);
-*int isatty(int fd);
-*int kill(pid_t pid, int sig);
-*int open(const char *pathname, int flags, mode_t mode);
-*DIR *opendir(const char *name);
-*void perror(const char *s);
-*ssize_t read(int fd, void *buff size_t count);
-*struct dirent *readdir(DIR *dirp);
-*ssize_t write(int fd,  const void *buf, size_t count);
-*pid_t wait3(int wstatus, int option, struct rusage *rusage);
-*pid_t wait4(pid_t pid, int *wstatus, int option, struct rusage *rusage);
-*pid_t wait(int *wstatus);
-*pid_t waitpid(pid_t pid, int *wstatus, int option);
-*char *strtok(char *str, const char *delim);
-*int stat(const char *pathname, struct stat *statbuf);
-*/
 
 #define CMD_NORM	0
 #define CMD_OR		1
