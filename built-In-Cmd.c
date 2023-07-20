@@ -3,7 +3,7 @@
 /**
  * exit_cmd - exit command for the shell
  * @cmd_dat: structure
- * Return: (1) exits, returns (0) if cmd_dat.argv[0] != "exit"
+ * Return: (1) exits, returns (0) if cmd_dat.argv[0] != "exit".
  */
 int exit_cmd(cmd_d *cmd_dat)
 {
