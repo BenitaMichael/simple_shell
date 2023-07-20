@@ -4,7 +4,7 @@
  * _set_alias - sets alias to accept string input
  * @cmd_dat: strucyture type
  * @str: the string alias
- * Return: Always 0 on success, 1 on error
+ * Return: Always 0 on success, 1 on error.
  */
 
 int _set_alias(cmd_d *cmd_dat, char *str)
