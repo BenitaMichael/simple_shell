@@ -19,7 +19,6 @@
 /**
 *typedef void(*sighandler_t)(int)
 *sighandler_t signal(int signum, sighandler_t handler);
-*
 *int close(int fd);
 *int access(const char *pathname, int mode);
 *int chdir(const char *path);
@@ -124,7 +123,7 @@ typedef struct cmddata
 	int history_count;
 } cmd_d;
 
-#define DAT_INIT \
+#define CMDDAT_INIT
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 		0, 0, 0}
 
@@ -155,7 +154,7 @@ char *_check(const char *haystack, const char *needle);
 void fork_c(cmd_d *cmd_dat);
 
 /* simple shell loop functions */
-int hsh_shell(cmd_d *cmd_dat, char **av);
+int shell(cmd_d *cmd_dat, char **av);
 int find_builtIn(cmd_d *cmd_dat);
 void path_cmd(cmd_d *cmd_dat);
 

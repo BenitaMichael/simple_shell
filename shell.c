@@ -1,12 +1,13 @@
 #include "main.h"
 
 /**
- * main - entry point
- * @ac: arg count
- * @av: arg vector
- *
- * Return: 0 on success, 1 on error
+ * main - entry point for simple shell
+ * @ac: argument count
+ * @av: argument vector
+ * Return: returns (0) if successful, and (1) if there
+ * is an error
  */
+
 int main(int ac, char **av)
 {
 	cmd_d dat[] = { DAT_INIT };
@@ -39,6 +40,6 @@ int main(int ac, char **av)
 	}
 	populate_env(dat);
 	rd_history(dat);
-	hsh_shell(dat, av);
+	shell(dat, av);
 	return (EXIT_SUCCESS);
 }

@@ -1,11 +1,13 @@
 #include "main.h"
 
 /**
- * hsh_shell - main shell loop
+ * shell - main shell loop
  * @cmd_dat: parameter
  * @av: argument vector
- * Return: 0 on success, 1 on error, or error code
+ * Return: returns (0) if successful, and (1) if there's an error
+ * or an error message
  */
+
 int hsh_shell(cmd_d *cmd_dat, char **av)
 {
 	ssize_t a = 0;
