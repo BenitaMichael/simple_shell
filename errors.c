@@ -3,7 +3,7 @@
 /**
  * append_err_s - prints an input string
  * @s: the error string to be printed
- * Return: Nothing (void)
+ * Return: returns nothing (void)
  */
 void append_err_s(char *s)
 {

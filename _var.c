@@ -42,7 +42,7 @@ int is_Chain(cmd_d *cmd_dat, char *buff, size_t *ptr)
  * @adr: current position address in buffer
  * @s: starting position
  * @len: buffer's length
- * Return: nothing (void)
+ * Return: returns nothing (void)
  */
 
 void chain_check(cmd_d *cmd_dat, char *buf, size_t *adr, size_t s, size_t len)
@@ -143,7 +143,7 @@ int var_replace(cmd_d *cmd_dat)
  * replace_str - replaces string
  * @o: pointer to address of old string
  * @n: new string
- * Return: (1) if replaced and (0) if not
+ * Return: returns (1) if replaced and (0) if not
  */
 
 int replace_str(char **o, char *n)

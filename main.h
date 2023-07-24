@@ -16,6 +16,7 @@
 #include <fcntl.h>
 #include <errno.h>
 
+
 /**
 *typedef void(*sighandler_t)(int)
 *sighandler_t signal(int signum, sighandler_t handler);
@@ -123,7 +124,7 @@ typedef struct cmddata
 	int history_count;
 } cmd_d;
 
-#define CMDDAT_INIT
+#define CMDDAT_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 		0, 0, 0}
 

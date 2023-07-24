@@ -5,6 +5,7 @@
  * @cmd_dat: struct type
  * @av: argument vector
  */
+
 void set_cmd(cmd_d *cmd_dat, char **av)
 {
 	int a = 0;
@@ -35,6 +36,7 @@ void set_cmd(cmd_d *cmd_dat, char **av)
  * clear_cmd - initialize command structure
  * @cmd_dat: structure type
  */
+
 void clear_cmd(cmd_d *cmd_dat)
 {
 	cmd_dat->arg = NULL;

@@ -8,7 +8,7 @@
  * or an error message
  */
 
-int hsh_shell(cmd_d *cmd_dat, char **av)
+int shell(cmd_d *cmd_dat, char **av)
 {
 	ssize_t a = 0;
 	int _built = 0;

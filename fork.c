@@ -12,7 +12,6 @@ void fork_c(cmd_d *cmd_dat)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-		/* TODO: PUT ERROR FUNCTION */
 		perror("Error:");
 		return;
 	}
@@ -25,7 +24,6 @@ void fork_c(cmd_d *cmd_dat)
 				exit(126);
 			exit(1);
 		}
-		/* TODO: PUT ERROR FUNCTION */
 	}
 	else
 	{

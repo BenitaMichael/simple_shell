@@ -6,6 +6,7 @@
  * @cmd_dat: Structure type
  * Return: the string array copy of the environment
  */
+
 char **get_env(cmd_d *cmd_dat)
 {
 	if (!cmd_dat->environ || cmd_dat->env_changed)
@@ -26,6 +27,7 @@ char **get_env(cmd_d *cmd_dat)
  * @val: the string environment variable value
  *  Return: returns (0)
  */
+
 int set_env(cmd_d *cmd_dat, char *var, char *val)
 {
 	char *buff = NULL, *c;

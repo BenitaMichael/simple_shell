@@ -6,6 +6,7 @@
  * @name: environment variable name
  * Return: the value of environment
  */
+
 char *_get_env(cmd_d *cmd_dat, const char *name)
 {
 	list_s *node = cmd_dat->env;
@@ -26,6 +27,7 @@ char *_get_env(cmd_d *cmd_dat, const char *name)
  * @cmd_dat: Structure type
  * Return: returns(0)
  */
+
 int my_env(cmd_d *cmd_dat)
 {
 	print_list_string(cmd_dat->env);
@@ -38,6 +40,7 @@ int my_env(cmd_d *cmd_dat)
  * @cmd_dat: Structure type.
  *  Return: returns (0)
  */
+
 int set_environ(cmd_d *cmd_dat)
 {
 	if (cmd_dat->argc != 3)
@@ -55,6 +58,7 @@ int set_environ(cmd_d *cmd_dat)
  * @cmd_dat: Structure arguments
  * Return: return (0)
  */
+
 int unset_environ(cmd_d *cmd_dat)
 {
 	int a;

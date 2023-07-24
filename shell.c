@@ -10,7 +10,7 @@
 
 int main(int ac, char **av)
 {
-	cmd_d dat[] = { DAT_INIT };
+	cmd_d cmddat[] = { CMDDAT_INIT };
 	int file_desc = 2;
 
 	asm ("mov %1, %0\n\t"
@@ -36,10 +36,10 @@ int main(int ac, char **av)
 			}
 			return (EXIT_FAILURE);
 		}
-		dat->read_file = file_desc;
+		cmddat->read_file = file_desc;
 	}
-	populate_env(dat);
-	rd_history(dat);
-	shell(dat, av);
+	populate_env(cmddat);
+	rd_history(cmddat);
+	shell(cmddat, av);
 	return (EXIT_SUCCESS);
 }

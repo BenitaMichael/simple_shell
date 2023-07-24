@@ -68,7 +68,7 @@ char *my_str_copy(char *str, char *src)
 /**
  * str_duplicate - duplicates a string input or output
  * @str: the string input
- * Return: address to the string duplicated
+ * Return: returns the address to the string duplicated
  */
 char *str_duplicate(const char *str)
 {

@@ -3,7 +3,7 @@
 /**
  * list_length - determines length of linked list
  * @ptr: pointer to first node
- * Return: size of linked list
+ * Return: returns the size of linked list
  */
 size_t list_length(const list_s *ptr)
 {
@@ -20,7 +20,7 @@ size_t list_length(const list_s *ptr)
 /**
  * list_to_str - array of strings is returned
  * @h: pointer to head node
- * Return: an array of strings
+ * Return: returns an array of strings
  */
 
 char **list_to_str(list_s *h)
@@ -58,7 +58,7 @@ char **list_to_str(list_s *h)
 /**
  * print_list - prints all elements of a linked list
  * @h: pointer to head node
- * Return: size of list
+ * Return: returns the size of list
  */
 
 size_t print_list(const list_s *h)

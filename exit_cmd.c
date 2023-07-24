@@ -4,7 +4,7 @@
  **string_char - checks for a character in a string
  *@s: the string to look for
  *@ptr: pointer
- *Return: (s) a pointer to the memory area s
+ *Return: return (s) a pointer to the memory area s
  */
 char *string_char(char *ptr, char s)
 {
@@ -51,7 +51,7 @@ char *string_copy(char *dest, char *src, int n)
  *@dest: the first string input
  *@src: the second string input
  *@n: the amount of bytes to be used
- *Return: the concatenated string
+ *Return: returns the concatenated string
  */
 
 char *string_concat(char *dest, char *src, int n)

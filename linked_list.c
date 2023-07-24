@@ -5,7 +5,7 @@
  * @h: pointer to head node
  * @str: string field of node
  * @no: node index used by history
- * Return: returns size of linked list
+ * Return: returns the size of linked list
  */
 
 list_s *add_node(list_s **h, const char *str, int no)
@@ -38,7 +38,7 @@ list_s *add_node(list_s **h, const char *str, int no)
  * @h: pointer to head node
  * @str: string field of node
  * @no: node index used by history
- * Return: size of list
+ * Return: returns the size of list
  */
 
 list_s *add_to_list(list_s **h, const char *str, int no)
@@ -77,7 +77,7 @@ list_s *add_to_list(list_s **h, const char *str, int no)
 /**
  * print_list_string - prints only the string element of the list
  * @ptr : pointer to the first node
- * Return: size of linked list
+ * Return: returns the size of linked list
  */
 
 size_t print_list_string(const list_s *ptr)
@@ -137,7 +137,7 @@ int delete_node(list_s **h, unsigned int i)
 /**
  * free_list - frees the list
  * @h_ptr: pointer to address of head node
- * Return: nothing (void)
+ * Return: returns nothing (void)
  */
 
 void free_list(list_s **h_ptr)

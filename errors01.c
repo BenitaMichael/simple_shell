@@ -110,8 +110,9 @@ void rm_comments(char *buff)
  *@no: number
  *@base: parameter
  *@_flags: flags
- * Return: string
+ * Return: returns the converted result (string)
  */
+
 char *convert_num(long int no, int base, int _flags)
 {
 	static char *arr;
