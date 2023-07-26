@@ -89,7 +89,7 @@ typedef struct list_str
  * @argc: argument count (command-line arguments)
  * @len_count: characters count in a string.
  * @error_num: error code
- * @line_count_flag: flag to count line of string inputs
+ * @line_flag: flag to count line of string inputs
  * @file_name: pointer to program file
  * @read_file: file descriptor used for reading inputs
  * @env: linked list of environ variables
@@ -110,7 +110,7 @@ typedef struct cmddata
 	int argc;
 	unsigned int len_count;
 	int error_num;
-	int line_count_flag;
+	int line_flag;
 	char *file_name;
 	list_s *env;
 	list_s *history;
@@ -140,11 +140,12 @@ typedef struct builtin
 } builtin_list;
 
 
-/* _string function(s) */
+/* string function(s) */
 int _putchar(char);
 void append_S(char *str); /*appends strings from character*/
 size_t string_length(char *str);
 int my_str_comp(const char *, const char *);
+int replace_str(char **o, char *n);
 char *str_concat(char *adr, char *ssrc);
 char *my_str_copy(char *str, char *src);
 char *str_duplicate(const char *str);
@@ -172,9 +173,9 @@ int fd_putc(char c, int fd);
 int fd_puts(char *str, int fd);
 int err_atoi(char *s);
 void print_err(cmd_d *, char *);
-int print_decimal(int, int);
-char *convert_num(long int, int, int);
-void rm_comments(char *);
+int print_decimal(int entry, int f_d);
+char *convert_num(long int no, int base, int _flags);
+void rm_comments(char *buff);
 
 
 /* exit functions */
@@ -189,9 +190,9 @@ int _free_ptr(void **);
 int interactive_shell(cmd_d *);
 
 /* _atoi functions */
-int _atoi(char *);
+int _atoi(char *str);
 int is_alpha(int c);
-int is_delimeter(char, char *);
+int is_delimeter(char c, char *d);
 
 /* alias function(s) */
 int _set_alias(cmd_d *cmd_dat, char *str);
@@ -210,7 +211,7 @@ int cd_cmd(cmd_d *cmd_dat);
 
 /* memory allocation functions (realloc) */
 char *memory_set(char *, char, unsigned int);
-void str_free(char **);
+void str_free(char **p);
 void *my_realloc(void *, unsigned int, unsigned int);
 
 
@@ -255,15 +256,14 @@ void free_list(list_s **);
 size_t list_length(const list_s *);
 char **list_to_str(list_s *);
 size_t prints_element(const list_s *h);
-list_s *start_node(list_s *, char *, char);
-ssize_t node_index(list_s *, list_s *);
+list_s *start_node(list_s *, char *prefix, char c);
+ssize_t node_index(list_s *h, list_s *n);
 
-/* variable functions */
+/* variables functions */
 int is_Chain(cmd_d *cmd_dat, char *buff, size_t *ptr);
 void chain_check(cmd_d *, char *, size_t *, size_t, size_t);
 int replace_alias(cmd_d *cmd_dat);
 int var_replace(cmd_d *cmd_dat);
-int replace_str(char **o, char *n);
 
 
 #endif

@@ -2,7 +2,7 @@
 /**
  * _atoi - converts the initial portion of the string pointed to a integer
  * @str: the string to be converted
- * Return: returns (0) if numbers in string or a set of 
+ * Return: returns (0) if numbers in string or a set of
  * converted number
  */
 

@@ -26,7 +26,7 @@ char *string_char(char *ptr, char s)
 char *string_copy(char *dest, char *src, int n)
 {
 	int a, b;
-	char *d = dest;
+	char *d = dest; /* Destination */
 
 	a = 0;
 	while (src[a] != '\0' && a < n - 1)

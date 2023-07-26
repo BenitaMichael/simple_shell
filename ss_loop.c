@@ -88,10 +88,10 @@ void path_cmd(cmd_d *cmd_dat)
 	int i, j;
 
 	cmd_dat->path = cmd_dat->argv[0];
-	if (cmd_dat->line_count_flag == 1)
+	if (cmd_dat->line_flag == 1)
 	{
 		cmd_dat->len_count++;
-		cmd_dat->line_count_flag = 0;
+		cmd_dat->line_flag = 0;
 	}
 	for (i = 0, j = 0; cmd_dat->arg[i]; i++)
 		if (!is_delimeter(cmd_dat->arg[i], " \t\n"))
