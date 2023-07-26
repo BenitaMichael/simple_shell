@@ -87,9 +87,9 @@ typedef struct list_str
  * @argv: pointer to an array of strings
  * @path: \string path
  * @argc: argument count (command-line arguments)
- * @len_count: characters count in a string
+ * @line_count: characters count in a string
  * @err_num: error code
- * @line_flag: flag to count line of string inputs
+ * @linecount_flag: flag to count line of string inputs
  * @fname: pointer to program file
  * @readfd: file descriptor used for reading inputs
  * @env: linked list of environ variables
@@ -108,9 +108,9 @@ typedef struct cmddata
 	char **argv;
 	char *path;
 	int argc;
-	unsigned int len_count;
+	unsigned int line_count;
 	int err_num;
-	int line_flag;
+	int linecount_flag;
 	char *fname;
 	list_s *env;
 	list_s *history;

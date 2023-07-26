@@ -78,7 +78,7 @@ ssize_t input_buffer(cmd_d *cmd_dat, char **buf, size_t *len)
 				(*buf)[s - 1] = '\0';
 				s--;
 			}
-			cmd_dat->line_flag = 1;
+			cmd_dat->linecount_flag = 1;
 			rm_comments(*buf);
 			build_history(cmd_dat, *buf, cmd_dat->histcount++);
 			{

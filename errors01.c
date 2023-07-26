@@ -40,7 +40,7 @@ void print_err(cmd_d *cmd_dat, char *str)
 {
 	append_err_s(cmd_dat->fname);
 	append_err_s(": ");
-	print_decimal(cmd_dat->len_count, STDERR_FILENO);
+	print_decimal(cmd_dat->line_count, STDERR_FILENO);
 	append_err_s(": ");
 	append_err_s(cmd_dat->argv[0]);
 	append_err_s(": ");
