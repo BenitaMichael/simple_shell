@@ -87,20 +87,20 @@ typedef struct list_str
  * @argv: pointer to an array of strings
  * @path: \string path
  * @argc: argument count (command-line arguments)
- * @len_count: characters count in a string.
- * @error_num: error code
+ * @len_count: characters count in a string
+ * @err_num: error code
  * @line_flag: flag to count line of string inputs
- * @file_name: pointer to program file
- * @read_file: file descriptor used for reading inputs
+ * @fname: pointer to program file
+ * @readfd: file descriptor used for reading inputs
  * @env: linked list of environ variables
  * @environ: array of environ variables
  * @env_changed: checks for if environment has changed
  * @history: pointer to past entry
- * @history_count: memory for prev command entered
+ * @histcount: memory for prev command entered
  * @status: result from prev command
  * @alias: command aliases
  * @cmd_buf: pointer address to command buffer
- * @cmd_buff_type: command buffer (CMD_type: || 0r &&, )
+ * @cmd_buf_type: command buffer (CMD_type: || 0r &&, )
  */
 typedef struct cmddata
 {
@@ -109,19 +109,20 @@ typedef struct cmddata
 	char *path;
 	int argc;
 	unsigned int len_count;
-	int error_num;
+	int err_num;
 	int line_flag;
-	char *file_name;
+	char *fname;
 	list_s *env;
 	list_s *history;
 	list_s *alias;
 	char **environ;
 	int env_changed;
 	int status;
-	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
-	int cmd_buff_type; /* CMD_type ||, &&, ; */
-	int read_file;
-	int history_count;
+
+	char **cmd_buf;
+	int cmd_buf_type; /* accepts ||, &&, ; */
+	int readfd;
+	int histcount;
 } cmd_d;
 
 #define CMDDAT_INIT \

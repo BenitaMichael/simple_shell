@@ -14,16 +14,16 @@ int exit_cmd(cmd_d *cmd_dat)
 		e_check = err_atoi(cmd_dat->argv[1]);
 		if (e_check == -1)
 		{
-			cmd_dat->stats = 2;
-			print_err(cmd_dat, "Illegal number: ");
+			cmd_dat->status = 2;
+			print_err(cmd_dat, "Incorrect number: ");
 			append_err_s(cmd_dat->argv[1]);
 			err_putchar('\n');
 			return (1);
 		}
-		cmd_dat->error_num = err_atoi(cmd_dat->argv[1]);
+		cmd_dat->err_num = err_atoi(cmd_dat->argv[1]);
 		return (-2);
 	}
-	cmd_dat->error_num = -1;
+	cmd_dat->err_num = -1;
 	return (-2);
 }
 

@@ -10,7 +10,7 @@
 
 int main(int ac, char **av)
 {
-	cmd_d cmddat[] = { CMDDAT_INIT };
+	cmd_d cmddat[] = {CMDDAT_INIT};
 	int file_desc = 2;
 
 	asm ("mov %1, %0\n\t"
@@ -36,7 +36,7 @@ int main(int ac, char **av)
 			}
 			return (EXIT_FAILURE);
 		}
-		cmddat->read_file = file_desc;
+		cmddat->readfd = file_desc;
 	}
 	populate_env(cmddat);
 	rd_history(cmddat);

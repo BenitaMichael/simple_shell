@@ -10,7 +10,7 @@ void set_cmd(cmd_d *cmd_dat, char **av)
 {
 	int a = 0;
 
-	cmd_dat->file_name = av[0];
+	cmd_dat->fname = av[0];
 	if (cmd_dat->arg)
 	{
 		cmd_dat->argv = token(cmd_dat->arg, " \t");
@@ -69,8 +69,8 @@ void free_cmd(cmd_d *cmd_dat, int t)
 		str_free(cmd_dat->environ);
 			cmd_dat->environ = NULL;
 		_free_ptr((void **)cmd_dat->cmd_buf);
-		if (cmd_dat->read_file > 2)
-			close(cmd_dat->read_file);
+		if (cmd_dat->readfd > 2)
+			close(cmd_dat->readfd);
 		_putchar(BUF_FLUSH);
 	}
 }

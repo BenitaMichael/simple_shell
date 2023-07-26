@@ -80,7 +80,7 @@ ssize_t input_buffer(cmd_d *cmd_dat, char **buf, size_t *len)
 			}
 			cmd_dat->line_flag = 1;
 			rm_comments(*buf);
-			build_history(cmd_dat, *buf, cmd_dat->history_count++);
+			build_history(cmd_dat, *buf, cmd_dat->histcount++);
 			{
 				*len = s;
 				cmd_dat->cmd_buf = buf;
@@ -125,7 +125,7 @@ ssize_t _input(cmd_d *cmd_dat)
 		if (i >= l)
 		{
 			i = l = 0; /* reset position and length */
-			cmd_dat->cmd_buff_type = CMD_NORM;
+			cmd_dat->cmd_buf_type = CMD_NORM;
 		}
 
 		*buf_ptr = p;
@@ -149,7 +149,7 @@ ssize_t read_buf(cmd_d *cmd_dat, char *buf, size_t *s)
 
 	if (*s)
 		return (0);
-	i = read(cmd_dat->read_file, buf, READ_BUF_SIZE);
+	i = read(cmd_dat->readfd, buf, READ_BUF_SIZE);
 	if (i >= 0)
 		*s = i;
 	return (i);

@@ -16,18 +16,18 @@ int is_Chain(cmd_d *cmd_dat, char *buff, size_t *ptr)
 	{
 		buff[a] = 0;
 		a++;
-		cmd_dat->cmd_buff_type = CMD_OR;
+		cmd_dat->cmd_buf_type = CMD_OR;
 	}
 	else if (buff[a] == '&' && buff[a + 1] == '&')
 	{
 		buff[a] = 0;
 		a++;
-		cmd_dat->cmd_buff_type = CMD_AND;
+		cmd_dat->cmd_buf_type = CMD_AND;
 	}
 	else if (buff[a] == ';')
 	{
 		buff[a] = 0;
-		cmd_dat->cmd_buff_type = CMD_CHAIN;
+		cmd_dat->cmd_buf_type = CMD_CHAIN;
 	}
 	else
 		return (0);
@@ -49,17 +49,17 @@ void chain_check(cmd_d *cmd_dat, char *buf, size_t *adr, size_t s, size_t len)
 {
 	size_t p = *adr;
 
-	if (cmd_dat->cmd_buff_type == CMD_AND)
+	if (cmd_dat->cmd_buf_type == CMD_AND)
 	{
-		if (cmd_dat->stats)
+		if (cmd_dat->status)
 		{
 			buf[s] = 0;
 			p = len;
 		}
 	}
-	if (cmd_dat->cmd_buff_type == CMD_OR)
+	if (cmd_dat->cmd_buf_type == CMD_OR)
 	{
-		if (!cmd_dat->stats)
+		if (!cmd_dat->status)
 		{
 			buf[s] = 0;
 			p = len;
@@ -117,7 +117,7 @@ int var_replace(cmd_d *cmd_dat)
 		if (!my_str_comp(cmd_dat->argv[a], "$?"))
 		{
 			replace_str(&(cmd_dat->argv[a]),
-					str_duplicate(convert_num(cmd_dat->stats, 10, 0)));
+					str_duplicate(convert_num(cmd_dat->status, 10, 0)));
 			continue;
 		}
 		if (!my_str_comp(cmd_dat->argv[a], "$$"))

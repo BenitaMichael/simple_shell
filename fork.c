@@ -27,12 +27,12 @@ void fork_c(cmd_d *cmd_dat)
 	}
 	else
 	{
-		wait(&(cmd_dat->stats));
-		if (WIFEXITED(cmd_dat->stats))
+		wait(&(cmd_dat->status));
+		if (WIFEXITED(cmd_dat->status))
 		{
-			cmd_dat->stats = WEXITSTATUS(cmd_dat->stats);
-			if (cmd_dat->stats == 126)
-				print_err(cmd_dat, "Permission denied\n");
+			cmd_dat->status = WEXITSTATUS(cmd_dat->status);
+			if (cmd_dat->status == 126)
+				print_err(cmd_dat, "Permission not granted\n");
 		}
 	}
 }

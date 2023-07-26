@@ -9,5 +9,5 @@
 
 int interactive_shell(cmd_d *cmd_dat)
 {
-	return (isatty(STDIN_FILENO) && cmd_dat->read_file <= 2);
+	return (isatty(STDIN_FILENO) && cmd_dat->readfd <= 2);
 }

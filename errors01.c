@@ -38,7 +38,7 @@ int err_atoi(char *str)
 
 void print_err(cmd_d *cmd_dat, char *str)
 {
-	append_err_s(cmd_dat->file_name);
+	append_err_s(cmd_dat->fname);
 	append_err_s(": ");
 	print_decimal(cmd_dat->len_count, STDERR_FILENO);
 	append_err_s(": ");
