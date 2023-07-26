@@ -211,7 +211,7 @@ int cd_cmd(cmd_d *cmd_dat);
 
 /* memory allocation functions (realloc) */
 char *memory_set(char *, char, unsigned int);
-void str_free(char **p);
+void str_free(char **);
 void *my_realloc(void *, unsigned int, unsigned int);
 
 
@@ -236,9 +236,9 @@ int number_history(cmd_d *cmd_dat);
 
 
 /* getline functions (my getline functions) */
-int my_getline(cmd_d *cmd_dat, char **ptr, size_t *len);
-ssize_t input_buffer(cmd_d *dat, char **buf, size_t *_len);
-ssize_t read_buf(cmd_d *cmd_dat, char *buf, size_t *i);
+int my_getline(cmd_d *cmd_dat, char **, size_t *);
+ssize_t input_buffer(cmd_d *dat, char **buf, size_t *);
+ssize_t read_buf(cmd_d *cmd_dat, char *buf, size_t *);
 ssize_t _input(cmd_d *cmd_dat);
 void signalHandler(int);
 
@@ -255,9 +255,9 @@ int delete_node(list_s **, unsigned int);
 void free_list(list_s **);
 size_t list_length(const list_s *);
 char **list_to_str(list_s *);
-size_t prints_element(const list_s *h);
-list_s *start_node(list_s *, char *prefix, char c);
-ssize_t node_index(list_s *h, list_s *n);
+size_t prints_element(const list_s *);
+list_s *start_node(list_s *, char *, char c);
+ssize_t node_index(list_s *, list_s *);
 
 /* variables functions */
 int is_Chain(cmd_d *cmd_dat, char *buff, size_t *ptr);
