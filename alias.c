@@ -60,7 +60,7 @@ int a_print(list_s *_node)
 	{
 		ptr = string_char(_node->str, '=');
 		for (a = _node->str; a <= ptr; a++)
-		_putchar(*a);
+			_putchar(*a);
 		_putchar('\'');
 		append_S(ptr + 1);
 		append_S("'\n");

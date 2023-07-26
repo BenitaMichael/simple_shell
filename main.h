@@ -97,7 +97,7 @@ typedef struct list_str
  * @env_changed: checks for if environment has changed
  * @history: pointer to past entry
  * @history_count: memory for prev command entered
- * @stats: result from prev command
+ * @status: result from prev command
  * @alias: command aliases
  * @cmd_buf: pointer address to command buffer
  * @cmd_buff_type: command buffer (CMD_type: || 0r &&, )
@@ -117,7 +117,7 @@ typedef struct cmddata
 	list_s *alias;
 	char **environ;
 	int env_changed;
-	int stats;
+	int status;
 	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
 	int cmd_buff_type; /* CMD_type ||, &&, ; */
 	int read_file;

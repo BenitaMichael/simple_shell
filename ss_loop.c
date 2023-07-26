@@ -17,7 +17,7 @@ int shell(cmd_d *cmd_dat, char **av)
 	{
 		clear_cmd(cmd_dat);
 		if (interactive_shell(cmd_dat))
-			append_S("#cisfun$ ");
+			append_S("#Cisfun$ ");
 		err_putchar(BUF_FLUSH);
 		a = _input(cmd_dat);
 		if (a != -1)
@@ -113,7 +113,7 @@ void path_cmd(cmd_d *cmd_dat)
 		else if (*(cmd_dat->arg) != '\n')
 		{
 			cmd_dat->stats = 127;
-			print_err(cmd_dat, "No such file or directory\n");
+			print_err(cmd_dat, "No such file\n");
 		}
 	}
 }

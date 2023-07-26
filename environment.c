@@ -65,7 +65,7 @@ int unset_environ(cmd_d *cmd_dat)
 
 	if (cmd_dat->argc == 1)
 	{
-		append_err_s("Arguements are too small.\n");
+		append_err_s("Arguements are too few.\n");
 		return (1);
 	}
 	for (a = 1; a <= cmd_dat->argc; a++)
