@@ -24,24 +24,24 @@ char **get_env(cmd_d *cmd_dat)
  *and modify an existing one
  * @cmd_dat: Structure type
  * @var: the string environment variable
- * @val: the string environment variable value
+ * @v: the string environment variable value
  *  Return: returns (0)
  */
 
-int set_env(cmd_d *cmd_dat, char *var, char *val)
+int set_env(cmd_d *cmd_dat, char *var, char *v)
 {
 	char *buff = NULL, *c;
 	list_s *node;
 
-	if (!var || !val)
+	if (!var || !v)
 		return (0);
 
-	buff = malloc(string_length(var) + string_length(val) + 2);
+	buff = malloc(string_length(var) + string_length(v) + 2);
 	if (!buff)
 		return (1);
 	my_str_copy(buff, var);
 	str_concat(buff, "=");
-	str_concat(buff, val);
+	str_concat(buff, v);
 	node = cmd_dat->env;
 	while (node)
 	{

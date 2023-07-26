@@ -9,7 +9,7 @@ int exit_cmd(cmd_d *cmd_dat)
 {
 	int e_check;
 
-	if (cmd_dat->argv[1]) /* If there is an exit arguement */
+	if (cmd_dat->argv[1])
 	{
 		e_check = err_atoi(cmd_dat->argv[1]);
 		if (e_check == -1)
@@ -28,32 +28,35 @@ int exit_cmd(cmd_d *cmd_dat)
 }
 
 /**
- * help_cmd - changes the current drectory of the process
- * @cmd_dat: Structure containing potential arguments. Used to maintain
- * constant function prototype.
- * Return: Always 0
+ * help_cmd - gives information on changed directories
+ * @cmd_dat: Structure containing arguments
+ * Return: returns (0)
  */
+
 int help_cmd(cmd_d *cmd_dat)
 {
 	char **arg_arr;
 
 	arg_arr = cmd_dat->argv;
-	append_S("help call works. Function not yet implemented \n");
+	append_S("Function does not exist \n");
 	if (0)
-		append_S(*arg_arr); /* temp att_unused workaround */
+	{
+		append_S(*arg_arr);
+	}
 	return (0);
 }
 
 
 /**
  * cd_cmd - changes directories
- * @cmd_dat: Structure containing potential arguments. Used to maintain
- * constant function prototype.
- * Return: Always 0
+ * @cmd_dat: Structure containing potential arguments
+ * Return: returns (0)
  */
+
 int cd_cmd(cmd_d *cmd_dat)
 {
-	char *c, *_dir, buff[1024];
+	char *c, *d; /* d stands for directory */
+	char buff[1024];
 	int _chdir;
 
 	c = getcwd(buff, 1024);
@@ -61,12 +64,11 @@ int cd_cmd(cmd_d *cmd_dat)
 		append_S("TODO: >>getcwd failure emsg here<<\n");
 	if (!cmd_dat->argv[1])
 	{
-		_dir = _get_env(cmd_dat, "HOME=");
-		if (!_dir)
-			_chdir = /* TODO: what should this be? */
-				chdir((_dir = _get_env(cmd_dat, "PWD=")) ? _dir : "/");
+		d = _get_env(cmd_dat, "HOME=");
+		if (!d)
+			_chdir = chdir((d = _get_env(cmd_dat, "PWD=")) ? d : "/");
 		else
-			_chdir = chdir(_dir);
+			_chdir = chdir(d);
 	}
 	else if (my_str_comp(cmd_dat->argv[1], "-") == 0)
 	{
@@ -77,8 +79,7 @@ int cd_cmd(cmd_d *cmd_dat)
 			return (1);
 		}
 		append_S(_get_env(cmd_dat, "OLDPWD=")), _putchar('\n');
-		_chdir = /* TODO: what should this be? */
-			chdir((_dir = _get_env(cmd_dat, "OLDPWD=")) ? _dir : "/");
+		_chdir = chdir((d = _get_env(cmd_dat, "OLDPWD=")) ? d : "/");
 	}
 	else
 		_chdir = chdir(cmd_dat->argv[1]);
@@ -102,6 +103,6 @@ int cd_cmd(cmd_d *cmd_dat)
  */
 int history_cmd(cmd_d *cmd_dat)
 {
-	print_list(cmd_dat->history);
+	prints_element(cmd_dat->history);
 	return (0);
 }

@@ -61,7 +61,7 @@ ssize_t input_buffer(cmd_d *cmd_dat, char **buf, size_t *len)
 	ssize_t s = 0;
 	size_t len_t = 0;
 
-	if (!*len) /* if nothing left in the buffer, fill it */
+	if (!*len) /* if empty, fill it */
 	{
 		free(*buf);
 		*buf = NULL;
@@ -75,13 +75,12 @@ ssize_t input_buffer(cmd_d *cmd_dat, char **buf, size_t *len)
 		{
 			if ((*buf)[s - 1] == '\n')
 			{
-				(*buf)[s - 1] = '\0'; /* remove trailing newline */
+				(*buf)[s - 1] = '\0';
 				s--;
 			}
 			cmd_dat->line_count_flag = 1;
 			rm_comments(*buf);
 			build_history(cmd_dat, *buf, cmd_dat->history_count++);
-			/* if (string_character(*buf, ';')) is this a command chain? */
 			{
 				*len = s;
 				cmd_dat->cmd_buf = buf;
@@ -99,42 +98,42 @@ ssize_t input_buffer(cmd_d *cmd_dat, char **buf, size_t *len)
 
 ssize_t _input(cmd_d *cmd_dat)
 {
-	static char *buf; /* the ';' command chain buffer */
 	static size_t i, j;
 	static size_t l;
 	ssize_t s = 0;
 	char **buf_ptr = &(cmd_dat->arg), *p;
+	static char *buf;
 
 	_putchar(BUF_FLUSH);
 	s = input_buffer(cmd_dat, &buf, &l);
-	if (s == -1) /* EOF */
+	if (s == -1) /* End of file */
 		return (-1);
-	if (l) /* we have commands left in the chain buffer */
+	if (l)
 	{
-		j = i; /* init new iterator to current buf position */
-		p = buf + i; /* get pointer for return */
+		j = i; /* itertor */
+		p = buf + i;
 
 		chain_check(cmd_dat, buf, &j, i, l);
-		while (j < l) /* iterate to semicolon or end */
+		while (j < l) /* iterate till a semicolon or end */
 		{
 			if (is_Chain(cmd_dat, buf, &j))
 				break;
 			j++;
 		}
 
-		i = j + 1; /* increment past nulled ';'' */
-		if (i >= l) /* reached end of buffer? */
+		i = j + 1;
+		if (i >= l)
 		{
 			i = l = 0; /* reset position and length */
 			cmd_dat->cmd_buff_type = CMD_NORM;
 		}
 
-		*buf_ptr = p; /* pass back pointer to current command position */
-		return (string_length(p)); /* return length of current command */
+		*buf_ptr = p;
+		return (string_length(p));
 	}
 
-	*buf_ptr = buf; /* else not a chain, pass back buffer from get_line() */
-	return (s); /* return length of buffer from get_line() */
+	*buf_ptr = buf;
+	return (s); /* return length */
 }
 
 /**

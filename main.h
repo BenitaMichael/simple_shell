@@ -82,7 +82,7 @@ typedef struct list_str
 	struct list_str *nxt;
 } list_s;
 /**
- * struct passdat - linked list
+ * struct cmd_dat - linked list created
  * @arg: pointer to strings with arguments
  * @argv: pointer to an array of strings
  * @path: \string path
@@ -231,7 +231,7 @@ char *history_file(cmd_d *cmd_dat);
 int rd_history(cmd_d *cmd_dat);
 int write_history(cmd_d *cmd_dat);
 int build_history(cmd_d *cmd_dat, char *buf, int line_count);
-int renumber_history(cmd_d *cmd_dat);
+int number_history(cmd_d *cmd_dat);
 
 
 /* getline functions (my getline functions) */
@@ -252,11 +252,9 @@ list_s *add_to_list(list_s **, const char *, int);
 size_t print_list_string(const list_s *);
 int delete_node(list_s **, unsigned int);
 void free_list(list_s **);
-
-/* more linked lists functions */
 size_t list_length(const list_s *);
 char **list_to_str(list_s *);
-size_t print_list(const list_s *h);
+size_t prints_element(const list_s *h);
 list_s *start_node(list_s *, char *, char);
 ssize_t node_index(list_s *, list_s *);
 

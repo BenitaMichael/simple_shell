@@ -16,7 +16,7 @@ void set_cmd(cmd_d *cmd_dat, char **av)
 		cmd_dat->argv = token(cmd_dat->arg, " \t");
 		if (!cmd_dat->argv)
 		{
-			cmd_dat->argv = malloc(sizeof(char *) * 2);
+			cmd_dat->argv = malloc(2 * sizeof(char *));
 			if (cmd_dat->argv)
 			{
 				cmd_dat->argv[0] = str_duplicate(cmd_dat->arg);
@@ -48,7 +48,7 @@ void clear_cmd(cmd_d *cmd_dat)
 /**
  * free_cmd - frees command
  * @cmd_dat: structure type
- * @t: returns (Nothing) true if action is successful
+ * @t: returns (Nothing) and true if action is successful
  */
 
 void free_cmd(cmd_d *cmd_dat, int t)

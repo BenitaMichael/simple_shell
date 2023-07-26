@@ -9,15 +9,15 @@
 
 char *_get_env(cmd_d *cmd_dat, const char *name)
 {
-	list_s *node = cmd_dat->env;
+	list_s *n = cmd_dat->env;
 	char *a;
 
-	while (node)
+	while (n)
 	{
-		a = _check(node->str, name);
+		a = _check(n->str, name);
 		if (a && *a)
 			return (a);
-		node = node->nxt;
+		n = n->nxt;
 	}
 	return (NULL);
 }
@@ -45,7 +45,7 @@ int set_environ(cmd_d *cmd_dat)
 {
 	if (cmd_dat->argc != 3)
 	{
-		append_err_s("Incorrect number of arguements\n");
+		append_err_s("Arguments are not complete\n");
 		return (1);
 	}
 	if (set_env(cmd_dat, cmd_dat->argv[1], cmd_dat->argv[2]))
@@ -65,7 +65,7 @@ int unset_environ(cmd_d *cmd_dat)
 
 	if (cmd_dat->argc == 1)
 	{
-		append_err_s("Too few arguements.\n");
+		append_err_s("Arguements are too small.\n");
 		return (1);
 	}
 	for (a = 1; a <= cmd_dat->argc; a++)
@@ -90,3 +90,4 @@ int populate_env(cmd_d *cmd_dat)
 	cmd_dat->env = node;
 	return (0);
 }
+

@@ -2,23 +2,24 @@
 
 /**
  * err_atoi - converts string inputed to an integer
- * @s: string to be converted
+ * @str: string to be converted
  * Return: returns (0) if no numbers in string,
- * converted number otherwise-1 on error(res)
+ * converted number otherwise (-1) on error(res)
  */
-int err_atoi(char *s)
+
+int err_atoi(char *str)
 {
 	int a = 0;
 	unsigned long int res = 0;
 
-	if (*s == '+')
-		s++;
-	for (a = 0;  s[a] != '\0'; a++)
+	if (*str == '+')
+		str++;
+	for (a = 0;  str[a] != '\0'; a++)
 	{
-		if (s[a] >= '0' && s[a] <= '9')
+		if (str[a] >= '0' && str[a] <= '9')
 		{
 			res *= 10;
-			res += (s[a] - '0');
+			res += (str[a] - '0');
 			if (res > INT_MAX)
 				return (-1);
 		}
@@ -52,10 +53,11 @@ void print_err(cmd_d *cmd_dat, char *str)
  * @f_d : file descriptor
  * Return: numbers of char printed
  */
+
 int print_decimal(int entry, int f_d)
 {
-	int (*__putchar)(char) = _putchar;
 	int a, num = 0;
+	int (*__putchar)(char) = _putchar;
 	unsigned int abs, curr;
 
 	if (f_d == STDERR_FILENO)
