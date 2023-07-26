@@ -17,7 +17,7 @@ int shell(cmd_d *cmd_dat, char **av)
 	{
 		clear_cmd(cmd_dat);
 		if (interactive_shell(cmd_dat))
-			append_S("#cisfun$ ");
+			append_S("#Cisfun$ ");
 		err_putchar(BUF_FLUSH);
 		a = _input(cmd_dat);
 		if (a != -1)
@@ -33,13 +33,13 @@ int shell(cmd_d *cmd_dat, char **av)
 	}
 	write_history(cmd_dat);
 	free_cmd(cmd_dat, 1);
-	if (!interactive_shell(cmd_dat) && cmd_dat->stats)
-		exit(cmd_dat->stats);
+	if (!interactive_shell(cmd_dat) && cmd_dat->status)
+		exit(cmd_dat->status);
 	if (_built == -2)
 	{
-		if (cmd_dat->error_num == -1)
-			exit(cmd_dat->stats);
-		exit(cmd_dat->error_num);
+		if (cmd_dat->err_num == -1)
+			exit(cmd_dat->status);
+		exit(cmd_dat->err_num);
 	}
 	return (_built);
 }
@@ -112,8 +112,8 @@ void path_cmd(cmd_d *cmd_dat)
 			fork_c(cmd_dat);
 		else if (*(cmd_dat->arg) != '\n')
 		{
-			cmd_dat->stats = 127;
-			print_err(cmd_dat, "No such file or directory\n");
+			cmd_dat->status = 127;
+			print_err(cmd_dat, "No such file\n");
 		}
 	}
 }

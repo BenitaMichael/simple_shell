@@ -68,11 +68,11 @@ int rd_history(cmd_d *cmd_dat)
 	if (l != a)
 		build_history(cmd_dat, buf + l, line_count++);
 	free(buf);
-	cmd_dat->history_count = line_count;
-	while (cmd_dat->history_count-- >= HIST_MAX)
+	cmd_dat->histcount = line_count;
+	while (cmd_dat->histcount-- >= HIST_MAX)
 		delete_node(&(cmd_dat->history), 0);
 	number_history(cmd_dat);
-	return (cmd_dat->history_count);
+	return (cmd_dat->histcount);
 }
 
 /**
@@ -128,7 +128,7 @@ int build_history(cmd_d *cmd_dat, char *buf, int line_count)
 /**
  * number_history - numbers the history list after update
  * @cmd_dat: Structure arguments
- * Return: returns the new history_count
+ * Return: returns the new history count
  */
 
 int number_history(cmd_d *cmd_dat)
@@ -141,5 +141,5 @@ int number_history(cmd_d *cmd_dat)
 		nd->num = x++;
 		nd = nd->nxt;
 	}
-	return (cmd_dat->history_count = x);
+	return (cmd_dat->histcount = x);
 }
