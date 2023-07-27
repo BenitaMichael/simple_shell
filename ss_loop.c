@@ -17,7 +17,7 @@ int shell(cmd_d *cmd_dat, char **av)
 	{
 		clear_cmd(cmd_dat);
 		if (interactive_shell(cmd_dat))
-			append_S("#Cisfun$ ");
+			append_S("$ ");
 		err_putchar(BUF_FLUSH);
 		a = _input(cmd_dat);
 		if (a != -1)
