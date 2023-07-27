@@ -14,8 +14,12 @@ char **get_env(cmd_d *cmd_dat)
 		cmd_dat->environ = list_to_str(cmd_dat->env);
 		cmd_dat->env_changed = 0;
 	}
-
-	return (cmd_dat->environ);
+       
+	if (strchr(var, ' ') != NULL)
+	 {
+		 return (NULL);
+	 }
+	 return (cmd_dat->environ);
 }
 
 
