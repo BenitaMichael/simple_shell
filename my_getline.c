@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * _getline - reads an entire line from stream from STDIN, An alternative
+ * my_getline - reads an entire line from stream from STDIN, An alternative
  * to (geline) function
  * @cmd_dat: struct parameter
  * @ptr: address to the pointer to buffer
  * @len: preallocated ptr buffer size
  * Return: size of preallocated size
  */
-int _getline(cmd_d *cmd_dat, char **ptr, size_t *len)
+int my_getline(cmd_d *cmd_dat, char **ptr, size_t *len)
 {
 	static char buf[READ_BUF_SIZE];
 	static size_t i, l;

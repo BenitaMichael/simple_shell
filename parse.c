@@ -45,13 +45,13 @@ char *char_dup(char *path_str, int start_c, int stop_c)
 
 /**
  * find_full_path - finds the full path of an executable command
- * @dat: the data structure
+ * @cmd_dat: the data structure
  * @path_str: the PATH string
  * @cmd: the command to find
  *
  * Return: full path of command if found or (NULL) if not
  */
-char *find_full_path(cmd_d *dat, char *path_str, char *cmd)
+char *find_full_path(cmd_d *cmd_dat, char *path_str, char *cmd)
 {
 	int a = 0, current_p = 0;
 	char *_path;
@@ -60,7 +60,7 @@ char *find_full_path(cmd_d *dat, char *path_str, char *cmd)
 		return (NULL);
 	if ((string_length(cmd) > 2) && _check(cmd, "./"))
 	{
-		if (if_exec_cmd(dat, cmd))
+		if (if_exec_cmd(cmd_dat, cmd))
 			return (cmd);
 	}
 	while (1)
@@ -75,7 +75,7 @@ char *find_full_path(cmd_d *dat, char *path_str, char *cmd)
 				str_concat(_path, "/");
 				str_concat(_path, cmd);
 			}
-			if (if_exec_cmd(dat, _path))
+			if (if_exec_cmd(cmd_dat, _path))
 				return (_path);
 			if (!path_str[a])
 				break;

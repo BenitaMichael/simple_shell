@@ -235,7 +235,7 @@ int number_history(cmd_d *cmd_dat);
 
 
 /* getline functions (my getline functions) */
-int _getline(cmd_d *cmd_dat, char **, size_t *);
+int my_getline(cmd_d *cmd_dat, char **, size_t *);
 ssize_t input_buffer(cmd_d *dat, char **buf, size_t *);
 ssize_t read_buf(cmd_d *cmd_dat, char *buf, size_t *);
 ssize_t _input(cmd_d *cmd_dat);
