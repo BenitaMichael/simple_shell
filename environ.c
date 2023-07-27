@@ -15,10 +15,10 @@ char **get_env(cmd_d *cmd_dat)
 		cmd_dat->env_changed = 0;
 	}
        
-	if (strchr(var, ' ') != NULL)
+	/*if (strchr(var, ' ') != NULL)
 	 {
 		 return (NULL);
-	 }
+	 }*/
 	 return (cmd_dat->environ);
 }
 
