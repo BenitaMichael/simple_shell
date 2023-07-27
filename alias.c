@@ -86,7 +86,7 @@ int alias_cmd(cmd_d *cmd_dat)
 		while (node)
 		{
 			a_print(node);
-			node = node->nxt;
+			node = node->next;
 		}
 		return (0);
 	}

@@ -39,6 +39,11 @@ int set_env(cmd_d *cmd_dat, char *var, char *v)
 	buff = malloc(string_length(var) + string_length(v) + 2);
 	if (!buff)
 		return (1);
+	if (strchr(var, ' ') != NULL)
+	{
+		free (buff);
+		return (1);
+	}
 	my_str_copy(buff, var);
 	str_concat(buff, "=");
 	str_concat(buff, v);
@@ -53,7 +58,7 @@ int set_env(cmd_d *cmd_dat, char *var, char *v)
 			cmd_dat->env_changed = 1;
 			return (0);
 		}
-		node = node->nxt;
+		node = node->next;
 	}
 	add_to_list(&(cmd_dat->env), buff, 0);
 	free(buff);
@@ -87,7 +92,7 @@ int unset_env(cmd_d *cmd_dat, char *var)
 			node = cmd_dat->env;
 			continue;
 		}
-		node = node->nxt;
+		node = node->next;
 		x++;
 	}
 	return (cmd_dat->env_changed);

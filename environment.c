@@ -17,7 +17,7 @@ char *_get_env(cmd_d *cmd_dat, const char *name)
 		a = _check(n->str, name);
 		if (a && *a)
 			return (a);
-		n = n->nxt;
+		n = n->next;
 	}
 	return (NULL);
 }

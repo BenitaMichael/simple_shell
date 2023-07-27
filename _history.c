@@ -93,7 +93,7 @@ int write_history(cmd_d *cmd_dat)
 	free(f_name);
 	if (f_desc == -1)
 		return (-1);
-	for (node = cmd_dat->history; node; node = node->nxt)
+	for (node = cmd_dat->history; node; node = node->next)
 	{
 		fd_puts(node->str, f_desc);
 		fd_putc('\n', f_desc);
@@ -139,7 +139,7 @@ int number_history(cmd_d *cmd_dat)
 	while (nd)
 	{
 		nd->num = x++;
-		nd = nd->nxt;
+		nd = nd->next;
 	}
 	return (cmd_dat->histcount = x);
 }

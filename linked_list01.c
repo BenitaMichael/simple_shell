@@ -11,7 +11,7 @@ size_t list_length(const list_s *ptr)
 
 	while (ptr)
 	{
-		ptr = ptr->nxt;
+		ptr = ptr->next;
 		s++;
 	}
 	return (s);
@@ -36,7 +36,7 @@ char **list_to_str(list_s *h)
 	string = malloc(sizeof(char *) * (l + 1));
 	if (!string)
 		return (NULL);
-	for (l = 0; node; node = node->nxt, l++)
+	for (l = 0; node; node = node->next, l++)
 	{
 		str = malloc(string_length(node->str) + 1);
 		if (!str)
@@ -72,7 +72,7 @@ size_t prints_element(const list_s *h)
 		_putchar(' ');
 		append_S(h->str ? h->str : "(nil)");
 		append_S("\n");
-		h = h->nxt;
+		h = h->next;
 		s++;
 	}
 	return (s);
@@ -95,7 +95,7 @@ list_s *start_node(list_s *node, char *prefix, char c)
 		ptr = _check(node->str, prefix);
 		if (ptr && ((c == -1) || (*ptr == c)))
 			return (node);
-		node = node->nxt;
+		node = node->next;
 	}
 	return (NULL);
 }
@@ -114,7 +114,7 @@ ssize_t node_index(list_s *h, list_s *n)
 	{
 		if (h == n)
 			return (s);
-		h = h->nxt;
+		h = h->next;
 		s++;
 	}
 	return (-1);

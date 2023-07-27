@@ -28,7 +28,7 @@ list_s *add_node(list_s **h, const char *str, int no)
 			return (NULL);
 		}
 	}
-	new_h->nxt = *h;
+	new_h->next = *h;
 	*h = new_h;
 	return (new_h);
 }
@@ -65,9 +65,9 @@ list_s *add_to_list(list_s **h, const char *str, int no)
 	}
 	if (node)
 	{
-		while (node->nxt)
-			node = node->nxt;
-		node->nxt = new_nd;
+		while (node->next)
+			node = node->next;
+		node->next = new_nd;
 	}
 	else
 		*h = new_nd;
@@ -88,7 +88,7 @@ size_t print_list_string(const list_s *ptr)
 	{
 		append_S(ptr->str ? ptr->str : "(nil)");
 		append_S("\n");
-		ptr = ptr->nxt;
+		ptr = ptr->next;
 		s++;
 	}
 	return (s);
@@ -112,7 +112,7 @@ int delete_node(list_s **h, unsigned int i)
 	if (!i)
 	{
 		node = *h;
-		*h = (*h)->nxt;
+		*h = (*h)->next;
 		free(node->str);
 		free(node);
 		return (1);
@@ -122,14 +122,14 @@ int delete_node(list_s **h, unsigned int i)
 	{
 		if (n == i)
 		{
-			prev->nxt = node->nxt;
+			prev->next = node->next;
 			free(node->str);
 			free(node);
 			return (1);
 		}
 		n++;
 		prev = node;
-		node = node->nxt;
+		node = node->next;
 	}
 	return (0);
 }
@@ -150,7 +150,7 @@ void free_list(list_s **h_ptr)
 	node = h;
 	while (node)
 	{
-		next = node->nxt;
+		next = node->next;
 		free(node->str);
 		free(node);
 		node = next;

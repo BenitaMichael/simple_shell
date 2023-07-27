@@ -6,8 +6,6 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/resource.h>
-#include <sys/time.h>
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -79,7 +77,7 @@ typedef struct list_str
 {
 	int num;
 	char *str;
-	struct list_str *nxt;
+	struct list_str *next;
 } list_s;
 /**
  * struct cmd_dat - linked list created
