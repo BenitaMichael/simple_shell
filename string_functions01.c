@@ -9,11 +9,7 @@ size_t string_length(char *str)
 {
 	int len = 0;
 
-	if (!str)
-	{
-		return (0);
-	}
-	while (*str++)
+	while (str[len] != '\0')
 	{
 		len++;
 	}
@@ -82,3 +78,4 @@ char *_check(const char *haystack, const char *needle)
 			return (NULL);
 	return ((char *)haystack);
 }
+

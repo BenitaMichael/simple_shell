@@ -73,7 +73,7 @@ typedef struct list_str
  * struct passdat - linked list
  * @arg: pointer to strings with arguments
  * @argv: pointer to an array of strings
- * @path: \string path
+ * @path: string path
  * @argc: argument count (command-line arguments)
  * @len_count: characters count in a string.
  * @error_num: error code

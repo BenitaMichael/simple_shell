@@ -1,48 +1,46 @@
 #include "main.h"
 
+
 /**
  * _putchar - writes the character c to standard outpt
  * @c: The character to print
  * Return: Successful (0)
  * On error, -1 is returned, and errno is set appropriately
  */
-
 int _putchar(char c)
 {
 	static int i;
-	static char buff[WRITE_BUF_SIZE];
-
-	return (write(1, &c, 1));
+	static char buf[WRITE_BUF_SIZE];
 
 	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
 	{
-		write(1, buff, i);
+		write(1, buf, i);
 		i = 0;
 	}
 	if (c != BUF_FLUSH)
-		buff[i++] = c;
+		buf[i++] = c;
 	return (1);
 }
+
 
 
 /**
  * append_S - prints a string
  * @str: pointer to string
  */
-
 void append_S(char *str)
 {
 	int i = 0;
 
 	if (!str)
 		return;
-
-	while (str[i])
+	while (str[i] != '\0')
 	{
 		_putchar(str[i]);
 		i++;
 	}
 }
+
 
 /**
  * *my_str_copy - copies a string
@@ -50,19 +48,19 @@ void append_S(char *str)
  * @src: second string input
  * Return: returns the result of the comparison
  */
-char *my_str_copy(char *str, char *src)
+char *my_str_copy(char *dest, char *src)
 {
 	int s = 0;
 
-	if (str == src || src == 0)
-		return (str);
+	if (dest == src || src == 0)
+		return (dest);
 	while (src[s])
 	{
-		str[s] = src[s];
+		dest[s] = src[s];
 		s++;
 	}
-	str[s] = 0;
-	return (str);
+	dest[s] = 0;
+	return (dest);
 }
 
 /**
@@ -86,7 +84,7 @@ char *str_duplicate(const char *str)
 		dup[len] = *--str;
 	return (dup);
 }
-
+	
 /**
  * replace_str - replaces string
  * @o: pointer to address of old string

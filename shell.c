@@ -10,7 +10,7 @@
 
 int main(int ac, char **av)
 {
-	cmd_d cmddat[] = {CMDDAT_INIT};
+	cmd_d cmddat[] = { CMDDATA_INIT };
 	int file_desc = 2;
 
 	asm ("mov %1, %0\n\t"

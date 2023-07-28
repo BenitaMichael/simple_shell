@@ -1,7 +1,6 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
-#include <dirent.h>
 #include <signal.h>
 #include <string.h>
 #include <stdio.h>
@@ -13,7 +12,6 @@
 #include <limits.h>
 #include <fcntl.h>
 #include <errno.h>
-
 
 /**
 *typedef void(*sighandler_t)(int)
@@ -83,7 +81,7 @@ typedef struct list_str
  * struct cmd_dat - linked list created
  * @arg: pointer to strings with arguments
  * @argv: pointer to an array of strings
- * @path: \string path
+ * @path: string path
  * @argc: argument count (command-line arguments)
  * @line_count: characters count in a string
  * @err_num: error code
@@ -123,7 +121,7 @@ typedef struct cmddata
 	int histcount;
 } cmd_d;
 
-#define CMDDAT_INIT \
+#define CMDDATA_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 		0, 0, 0}
 
@@ -155,14 +153,14 @@ char *_check(const char *haystack, const char *needle);
 void fork_c(cmd_d *cmd_dat);
 
 /* simple shell loop functions */
-int shell(cmd_d *cmd_dat, char **av);
-int find_builtIn(cmd_d *cmd_dat);
-void path_cmd(cmd_d *cmd_dat);
+int shell(cmd_d *, char **);
+int find_builtIn(cmd_d *);
+void path_cmd(cmd_d *);
 
 /* parse functions */
-int if_exec_cmd(cmd_d *cmd_dat, char *path);
+int if_exec_cmd(cmd_d *, char *);
 char *char_dup(char *, int, int);
-char *find_full_path(cmd_d *dat, char *path_str, char *cmd);
+char *find_full_path(cmd_d *, char *, char *);
 
 
 /* error functions */
@@ -194,19 +192,19 @@ int is_alpha(int c);
 int is_delimeter(char c, char *d);
 
 /* alias function(s) */
-int _set_alias(cmd_d *cmd_dat, char *str);
-int _unset_alias(cmd_d *cmd_dat, char *str);
+int _set_alias(cmd_d *, char *str);
+int _unset_alias(cmd_d *, char *str);
 int a_print(list_s *_node);
-int alias_cmd(cmd_d *cmd_dat);
+int alias_cmd(cmd_d *);
 
 /* token function(s) */
 char **token(char *str, char *delim);
 
 /* built in command function */
-int exit_cmd(cmd_d *cmd_dat);
-int history_cmd(cmd_d *cmd_dat);
-int help_cmd(cmd_d *cmd_dat);
-int cd_cmd(cmd_d *cmd_dat);
+int exit_cmd(cmd_d *);
+int history_cmd(cmd_d *);
+int help_cmd(cmd_d *);
+int cd_cmd(cmd_d *);
 
 /* memory allocation functions (realloc) */
 char *memory_set(char *, char, unsigned int);
@@ -215,36 +213,36 @@ void *my_realloc(void *, unsigned int, unsigned int);
 
 
 /* environ functions */
-char **get_env(cmd_d *cmd_dat);
+char **get_env(cmd_d *);
 int set_env(cmd_d *, char *, char *); /* still confusing */
 int unset_env(cmd_d *, char *);
 
 /* environment functions */
 char *_get_env(cmd_d *, const char *);
-int my_env(cmd_d *cmd_dat);
-int set_environ(cmd_d *cmd_dat);
-int unset_environ(cmd_d *cmd_dat);
-int populate_env(cmd_d *cmd_dat);
+int my_env(cmd_d *);
+int set_environ(cmd_d *);
+int unset_environ(cmd_d *);
+int populate_env(cmd_d *);
 
 /* history functions */
-char *history_file(cmd_d *cmd_dat);
-int rd_history(cmd_d *cmd_dat);
-int write_history(cmd_d *cmd_dat);
-int build_history(cmd_d *cmd_dat, char *buf, int line_count);
-int number_history(cmd_d *cmd_dat);
+char *history_file(cmd_d *);
+int rd_history(cmd_d *);
+int write_history(cmd_d *);
+int build_history(cmd_d *, char *buf, int line_count);
+int number_history(cmd_d *);
 
 
 /* getline functions (my getline functions) */
-int my_getline(cmd_d *cmd_dat, char **, size_t *);
-ssize_t input_buffer(cmd_d *dat, char **buf, size_t *);
-ssize_t read_buf(cmd_d *cmd_dat, char *buf, size_t *);
-ssize_t _input(cmd_d *cmd_dat);
+int my_getline(cmd_d *, char **, size_t *);
+ssize_t input_buffer(cmd_d *, char **buf, size_t *);
+ssize_t read_buf(cmd_d *, char *buf, size_t *);
+ssize_t _input(cmd_d *);
 void signalHandler(int);
 
 /* command data functions */
-void set_cmd(cmd_d *cmd_dat, char **av);
-void clear_cmd(cmd_d *cmd_dat);
-void free_cmd(cmd_d *cmd_dat, int t);
+void set_cmd(cmd_d *, char **av);
+void clear_cmd(cmd_d *);
+void free_cmd(cmd_d *, int t);
 
 /* linked list functions */
 list_s *add_node(list_s **, const char *, int);
@@ -259,10 +257,10 @@ list_s *start_node(list_s *, char *, char c);
 ssize_t node_index(list_s *, list_s *);
 
 /* variables functions */
-int is_Chain(cmd_d *cmd_dat, char *buff, size_t *ptr);
+int is_Chain(cmd_d *, char *buff, size_t *ptr);
 void chain_check(cmd_d *, char *, size_t *, size_t, size_t);
-int replace_alias(cmd_d *cmd_dat);
-int var_replace(cmd_d *cmd_dat);
+int replace_alias(cmd_d *);
+int var_replace(cmd_d *);
 
 
 #endif
